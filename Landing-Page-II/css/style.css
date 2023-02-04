@@ -1,0 +1,255 @@
+/* start variables */
+:root {
+  --main-color: #00c7fc;
+  --secondary-color: #2c4755;
+  --transparent-color: rgb(15 116 143 / 70%);
+  --section-padding: 60px;
+  --section-background: white;
+}
+/* end variables */
+
+/* start global rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end global rules */
+
+/* start hero and header section */
+.hero {
+  background-image: url("../assets/images/landing.jpg");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero .header {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.hero .header .container::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+  height: 1px;
+  width: calc(100% - 15px);
+  background-color: rgb(162, 162, 162);
+}
+
+.hero .header .logo img {
+  height: 40px;
+}
+
+.hero .header .links {
+  display: flex;
+  align-items: center;
+}
+
+.hero .header .links ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.hero .header .links .toggle-menu {
+  display: none;
+  color: white;
+  font-size: 20px;
+  padding: 40px 10px;
+}
+
+.hero .header .links ul li a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  color: white;
+  font-size: 14px;
+  padding: 40px 10px;
+  z-index: 2;
+}
+
+.hero .header .links ul li a.active {
+  color: var(--main-color);
+  border-bottom: solid 1px var(--main-color);
+}
+
+.hero .header .links ul li a:hover {
+  color: var(--main-color);
+  border-bottom: solid 1px var(--main-color);
+}
+
+.hero .header .links .form {
+  position: relative;
+  padding-left: 40px;
+  height: 30px;
+  width: 40px;
+  margin-left: 20px;
+  border-left: solid 1px white;
+}
+
+.hero .header .links .form i {
+  color: white;
+  font-weight: 800;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.hero .text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  background-color: var(--transparent-color);
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px;
+}
+
+.hero .text .content {
+  max-width: 500px;
+}
+
+.hero .text .content h2 {
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.hero .text .content p {
+  line-height: 2;
+  font-size: 14px;
+}
+
+.hero > i {
+  position: absolute;
+  color: white;
+}
+.hero > i:first-of-type {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+}
+.hero > i:last-of-type {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+}
+
+.hero .bullets {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+}
+
+.hero .bullets span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: solid white 1px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.hero .bullets span:nth-of-type(2) {
+  background-color: var(--main-color);
+  border: var(--main-color);
+}
+
+@media (max-width: 767px) {
+  .hero .header .links .toggle-menu {
+    display: block;
+  }
+
+  .hero .header .links:hover ul {
+    display: block;
+  }
+
+  .hero .header .links ul {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    margin-left: 0;
+    padding-left: 0;
+    flex-direction: column;
+    justify-content: start;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .hero .header .links ul li a {
+    padding: 15px;
+    width: 100vw;
+  }
+
+  .hero .text {
+    display: block;
+    width: 100%;
+  }
+  .hero .text .content {
+    max-width: 100%;
+  }
+  .hero > i {
+    display: none;
+  }
+}
+
+/* end hero and hero section */
