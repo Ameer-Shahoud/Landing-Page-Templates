@@ -791,11 +791,11 @@ body {
 
 .test-skills .skills .content .prog-holder span::after {
   content: "";
-    position: absolute;
-    right: -8px;
-    top: -15px;
-    border: solid 8px;
-    border-color: black transparent transparent;
+  position: absolute;
+  right: -8px;
+  top: -15px;
+  border: solid 8px;
+  border-color: black transparent transparent;
 }
 
 @media (min-width: 992px) {
@@ -805,7 +805,6 @@ body {
 }
 
 @media (max-width: 767px) {
-  
   .test-skills {
     padding: 0 10px 0 20px;
     max-width: 100vw;
@@ -823,5 +822,245 @@ body {
     text-align: center;
   }
 }
-
 /* end test-skills section */
+
+/* start quote section */
+.quote {
+  margin-top: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-image: url(../assets/images/quote.jpg);
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.quote .container {
+  position: relative;
+}
+
+.quote q {
+  font-size: 30px;
+}
+/* end quote section */
+
+/* start pricing section */
+.pricing {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.pricing .container {
+  margin-top: 75px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.pricing .plan {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.pricing .plan .head {
+  padding: 20px 0 40px;
+  text-align: center;
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing .plan .head h3 {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.pricing .plan .head span {
+  position: relative;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.pricing .plan .head span::before {
+  content: "$";
+  position: absolute;
+  left: -30px;
+  top: -5px;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+.pricing .plan .head span::after {
+  content: "/Mo";
+  position: absolute;
+  right: -50px;
+  bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pricing .plan ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .plan ul li {
+  padding: 20px 0;
+  position: relative;
+}
+
+.pricing .plan ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 150px;
+  height: 1px;
+  background-color: var(--main-color);
+}
+
+.pricing .plan a {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 20px;
+  border: solid 1px var(--main-color);
+  text-decoration: none;
+  color: var(--main-color);
+  transition: 0.3s;
+}
+
+.pricing .plan a:hover {
+  color: white;
+  background-color: var(--main-color);
+}
+
+.pricing .special-request {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pricing .special-request p {
+  font-size: 20px;
+}
+
+.pricing .special-request a {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 20px;
+
+  text-decoration: none;
+  color: white;
+  background-color: var(--main-color);
+  transition: 0.3s;
+}
+
+.pricing .special-request a:hover {
+  border: solid 1px var(--main-color);
+  background-color: transparent;
+  color: var(--main-color);
+}
+/* end pricing section */
+
+/* start email section */
+.email {
+  margin-top: 50px;
+  position: relative;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../assets/images/subscribe.jpg);
+  background-size: cover;
+}
+
+.email .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.email .subscribe {
+  color: white;
+  position: relative;
+  border: 1px solid white;
+  display: flex;
+  width: 600px;
+}
+
+.email .subscribe i {
+  padding: 25px 15px 25px 25px;
+}
+
+.email .subscribe input {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: calc(100%-200px);
+  flex: 1;
+}
+
+.email .subscribe input::placeholder {
+  color: white;
+}
+
+.email .subscribe input:focus {
+  outline: none;
+}
+
+.email .subscribe span {
+  justify-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  width: 125px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.email .subscribe span:hover {
+  background-color: transparent;
+}
+
+.email .text {
+  margin-left: 50px;
+  color: white;
+  line-height: 1.8;
+}
+
+@media (max-width: 992px) {
+  .email .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .email .text {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .email .subscribe {
+    width: auto;
+    max-width: 600px;
+  }
+}
+/* end email section */
+
+/* start contact section */
+.contact {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+/* end contact section */
