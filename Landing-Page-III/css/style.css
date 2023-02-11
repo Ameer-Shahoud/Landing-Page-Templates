@@ -816,19 +816,85 @@ ul {
 
 .team .box {
   position: relative;
-  background-color: blue;
+}
+
+.team .box::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: #777777;
+  opacity: 0.25;
+  border-radius: 10px;
+  z-index: -2;
+  transition: var(--main-transition);
+}
+
+.team .box:hover::before {
+  width: calc(100% - 60px);
 }
 
 .team .box .data {
-  margin-top: 100px;
+  margin-top: 70px;
   display: flex;
 }
 
-.team .box .image {
+.team .box .data .image {
   width: 100%;
 }
 
-.team .box .image img {
+.team .box .data .image img {
   width: 100%;
+  border-radius: 10px;
+  transition: var(--main-transition);
 }
+
+.team .box:hover .data .image img {
+  filter: grayscale();
+}
+
+.team .box .data .icons {
+  padding: 50px 0;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team .box .data .icons a i {
+  color: #777777;
+}
+
+.team .box .data .icons a:hover i {
+  color: var(--main-color);
+}
+
+.team .box .data .icons a:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.team .box .info {
+  margin-left: 80px;
+}
+
+.team .box .info h4 {
+  color: var(--main-color);
+  font-size: 22px;
+  margin-bottom: 0;
+  margin-top: 15px;
+  transition: var(--main-transition);
+}
+
+.team .box:hover .info h4 {
+  color: #777777;
+}
+
+.team .box .info p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 /* end team members section */
