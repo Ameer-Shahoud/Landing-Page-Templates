@@ -898,3 +898,205 @@ ul {
 }
 
 /* end team members section */
+
+/* start services section */
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--secondary-color);
+}
+
+.services .container {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.services .box {
+  position: relative;
+  padding: 0;
+  background-color: white;
+  box-shadow: 5px 5px 10px #ddd, -5px -5px 10px #ddd;
+  transition: var(--main-transition);
+}
+
+.services .box:hover {
+  transform: translateY(-10px);
+}
+
+.services .box::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: 50%;
+  height: 3px;
+  width: 0;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+
+.services .box::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  height: 3px;
+  width: 0;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+
+.services .box:hover::before,
+.services .box:hover::after {
+  width: 50%;
+}
+
+.services .box .content {
+  padding: 30px 0 40px 0;
+  text-align: center;
+}
+
+.services .box .content i {
+  color: #d5d5d5;
+}
+
+.services .box .content h4 {
+  margin-top: 20px;
+  margin-bottom: 0;
+  color: var(--main-color);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.services .box .foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.services .box .foot .count {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  height: 50px;
+  padding-left: 25px;
+  padding-right: 10px;
+  background-color: var(--main-color);
+  color: white;
+  z-index: 5;
+}
+
+.services .box .foot .count::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: -1;
+  transform-origin: left bottom;
+  transform: skewX(-30deg);
+}
+
+.services .box .foot .count::after {
+  content: "";
+  position: absolute;
+  right: -75%;
+  top: 0;
+  width: 75%;
+  height: 100%;
+  background-color: #d5d5d5;
+  z-index: -1;
+  transform-origin: left bottom;
+  transform: skewX(-30deg);
+}
+
+.services .box .foot .details {
+  text-decoration: none;
+  color: var(--main-color);
+  padding-right: 20px;
+  text-transform: capitalize;
+}
+/* end services section */
+
+/* start skills section */
+.skills {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.skills .container {
+  margin-top: 100px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.skills .image {
+  width: 500px;
+}
+
+.skills .image img {
+  width: 100%;
+}
+
+.skills .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skills .content .skill .title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.skills .content .skill .progress {
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+
+.skills .content .skill .progress::after {
+  content: attr(data);
+  position: absolute;
+  top: -43px;
+  right: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--main-color);
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+  z-index: 2;
+}
+
+.skills .content .skill .progress span {
+  display: inline-block;
+  height: 100%;
+  background-color: var(--main-color);
+}
+
+@media (max-width: 991px) {
+  
+  .skills .container {
+    display: block;
+  }
+
+  .skills .image {
+    display: none;
+  }
+
+  .skills .content {
+    padding-left: 30px;
+  }
+}
+
+/* end skills section */
