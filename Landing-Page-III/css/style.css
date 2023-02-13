@@ -67,13 +67,13 @@ ul {
   color: black;
   text-transform: uppercase;
   transition: var(--main-transition);
+  transition-delay: 0.5s;
   z-index: 1;
 }
 
 .special-heading:hover {
   color: white;
   border: 2px solid transparent;
-  transition-delay: 0.5s;
 }
 
 .special-heading::before,
@@ -89,22 +89,24 @@ ul {
 }
 .special-heading::before {
   left: -30px;
+  animation: heading-before-up 0.5s linear forwards;
 }
 .special-heading::after {
   right: -30px;
+  animation: heading-after-up 0.5s linear forwards;
 }
 
 .special-heading:hover::before {
   z-index: -1;
-  animation: heading-before 0.5s linear forwards;
+  animation: heading-before-hover 0.5s linear forwards;
 }
 
 .special-heading:hover::after {
   z-index: -1;
-  animation: heading-after 0.5s linear forwards;
+  animation: heading-after-hover 0.5s linear forwards;
 }
 
-@keyframes heading-before {
+@keyframes heading-before-hover {
   0% {
     left: -30px;
     border-radius: 50%;
@@ -121,7 +123,7 @@ ul {
     border-radius: 0;
   }
 }
-@keyframes heading-after {
+@keyframes heading-after-hover {
   0% {
     right: -30px;
     border-radius: 50%;
@@ -136,6 +138,41 @@ ul {
     width: 51%;
     height: 100%;
     border-radius: 0;
+  }
+}
+
+@keyframes heading-before-up {
+  0% {
+    left: 0;
+    border-radius: 0;
+    width: 51%;
+    height: 100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: -30px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+}
+@keyframes heading-after-up {
+  0% {
+    right: 0;
+    border-radius: 0;
+    width: 51%;
+    height: 100%;
+  }
+  50% {
+    right: 0;
+  }
+  100% {
+    right: -30px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
   }
 }
 /* end special-heading */
@@ -1195,13 +1232,13 @@ ul {
 .events > img:first-of-type {
   position: absolute;
   left: 0;
-  bottom: 100px;
+  bottom: 200px;
 }
 
 .events > img:last-of-type {
   position: absolute;
   right: 0;
-  top: 100px;
+  top: 200px;
 }
 .events .container {
   margin-top: 100px;
@@ -1214,7 +1251,9 @@ ul {
 }
 
 .events .content .image {
+  position: relative;
   width: 40%;
+  z-index: 5;
 }
 
 .events .content .image img {
@@ -1337,15 +1376,116 @@ ul {
 .pricing > img:first-of-type {
   position: absolute;
   left: 0;
-  bottom: 100px;
+  bottom: 200px;
 }
 
 .pricing > img:last-of-type {
   position: absolute;
   right: 0;
-  top: 100px;
+  top: 200px;
 }
 .pricing .container {
   margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  gap: 40px;
+}
+
+.pricing .box {
+  position: relative;
+  background-color: white;
+  text-align: center;
+  box-shadow: 5px 5px 10px #ddd,-5px -5px 10px #ddd;
+}
+
+@media (min-width: 1199px) {
+  .pricing .box:nth-child(2) {
+    transform: translateY(-20px);
+  }
+}
+
+.pricing .box:nth-child(2)::before {
+  content: "Most Popular";
+  position: absolute;
+  left: calc(100% - 20px);
+  top: 0;
+  width: 140px;
+  font-size: 18px;
+  padding: 10px 0 10px 10px;
+  text-align: start;
+  color: white;
+  font-weight: bold;
+  background-color: var(--main-color);
+  transform-origin: left top;
+  transform: rotate(90deg);
+}
+
+.pricing .box:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  left: calc(100% - 20px - 41px);
+  top: 130px;
+  width: 41px;
+  height: 41px;
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+.pricing .box .title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.pricing .box img {
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.pricing .box .price span{
+  font-size: 60px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.pricing .box .price p {
+  margin-top: 0;
+  color: #777777;
+}
+
+.pricing .box .features {
+  text-align: start;
+  padding: 0;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+.pricing .box .features li {
+  margin-bottom: 40px;
+}
+
+.pricing .box .features li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  margin-right: 10px;
+  font-weight: 900;
+  color: var(--main-color);
+}
+
+.pricing .box .choose {
+  display: inline-block;
+  margin-bottom: 40px;
+  padding:15px 20px;
+  color: var(--main-color);
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  transition: var(--main-transition);
+}
+
+.pricing .box .choose:hover {
+  color: white;
+  background-color: var(--main-color);
 }
 /* end pricing section */
