@@ -1633,3 +1633,118 @@ ul {
   font-style: italic;
 }
 /* end stats section */
+
+/* start discount section */
+.discount {
+  display: flex;
+}
+
+.discount .text {
+  width: 50%;
+  text-align: center;
+  color: white;
+  padding: 80px;
+  background-image: url(../assets/images/discount-background1.jpg);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.discount .text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  opacity: 0.98;
+  z-index: -1;
+}
+
+.discount .text h4 {
+  margin-top: 0;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.discount .text p {
+  margin-top: 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.discount .text img {
+  width: 300px;
+}
+
+.discount .form {
+  width: 50%;
+  display: flex;
+  padding-bottom: 30px;
+  justify-content: center;
+}
+
+.discount .form .content {
+  width: fit-content;
+}
+
+.discount .form .content h4 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.discount .form .content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.discount .form .content form input[type="text"],
+.discount .form .content form textarea {
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 16px;
+  border-bottom: 1px solid #d7d7d7;
+  margin-bottom: 20px;
+}
+
+.discount .form .content form textarea {
+  resize: none;
+}
+
+.discount .form .content form input[type="submit"] {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--main-color);
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.discount .form .content form input[type="submit"]:hover {
+  background-color: var(--main-color-alt);
+}
+
+@media (max-width: 991px) {
+  .discount {
+    flex-direction: column;
+  }
+  .discount .text,.discount .form {
+    width: 100%;
+  }
+}
+/* end discount section */
+
+
+/* start footer section */
+.footer {
+  background-color: #191919;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+/* end footer section */
